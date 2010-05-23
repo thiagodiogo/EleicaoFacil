@@ -1,0 +1,36 @@
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Visualizando local</h2>
+
+			<p>
+				<b>Local:</b>
+				<%=h "#{@registro_de_voto.local.secao}-#{@registro_de_voto.local.nome}-#{@registro_de_voto.local.mesa}"%>
+			</p>
+			
+			<p>
+				<b>Chapa:</b>
+				<%=h @registro_de_voto.chapa.nome %>
+			</p>
+
+			<p>
+				<b>Votos docentes:</b>
+				<%=h @registro_de_voto.votos_docentes %>
+			</p>
+
+			<p>
+				<b>Votos tecnicoadm:</b>
+				<%=h @registro_de_voto.votos_tecnicoadm %>
+			</p>
+
+			<p>
+				<b>Votos alunos:</b>
+				<%=h @registro_de_voto.votos_alunos %>
+			</p>
+			<%= link_to 'Edit', edit_registro_de_voto_path(@registro_de_voto) %> |
+			<%= link_to 'Back', registro_de_votos_path %>
+		</div>
+	</div>
+</div>
+<%end%>

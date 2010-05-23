@@ -1,0 +1,24 @@
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Visualizando local</h2>
+			<p>
+				<b>Nome:</b>
+				<%=h @local.nome %>
+			</p>
+			<p>
+				<b>Seção:</b>
+				<%=h @local.secao %>
+			</p>
+			<p>
+				<b>Mesa:</b>
+				<%=h @local.mesa %>
+			</p>
+			<%= link_to 'Editar', edit_local_path(@local) %> |
+			<%= link_to 'Voltar para lista', locals_path %> |
+			<%= link_to 'Novo', new_local_path %> |
+		</div>
+	</div>
+</div>
+<%end%>

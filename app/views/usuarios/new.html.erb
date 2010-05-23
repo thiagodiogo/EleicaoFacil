@@ -1,0 +1,28 @@
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Nova conta</h2>
+
+			<% @usuario.password = @usuario.password_confirmation = nil %>
+
+			<%= error_messages_for :usuario %>
+			<% form_for :usuario, :url => usuarios_path do |f| -%>
+			<p><%= label_tag 'login' %><br/>
+			<%= f.text_field :login %></p>
+
+			<p><%= label_tag 'email' %><br/>
+			<%= f.text_field :email %></p>
+
+			<p><%= label_tag 'password' %><br/>
+			<%= f.password_field :password %></p>
+
+			<p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
+			<%= f.password_field :password_confirmation %></p>
+
+			<p><%= submit_tag 'Sign up' %></p>
+			<% end -%>
+		</div>
+	</div>
+</div>
+<%end%>

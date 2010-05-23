@@ -1,0 +1,2 @@
+module GraficosLocaisHelper
+end

@@ -1,0 +1,25 @@
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Cadastro de chapas</h2>
+			<%= link_to 'Nova chapa', new_chapa_path %>
+			<br/><br/><br/>
+			<table class="table">
+				<tr>
+					<th>Nome</th>
+				</tr>
+
+				<% @chapas.each do |chapa| %>
+				<tr>
+					<td><%=h chapa.nome %></td>
+					<td><%= link_to 'Visualizar', chapa %></td>
+					<td><%= link_to 'Editar', edit_chapa_path(chapa) %></td>
+					<td><%= link_to 'Remover', chapa, :confirm => 'Are you sure?', :method => :delete %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
+<% end %>

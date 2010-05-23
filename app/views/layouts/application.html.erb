@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>Eleição Reitoria UFF 2010</title>
+	<%= stylesheet_link_tag "web_app_theme", "themes/djime-cerulean/style", "web_app_theme_override", :cache => true %>
+	<%= javascript_include_tag 'jquery.min' %>
+	<%= javascript_include_tag 'jquery-ui' %>
+	<%= javascript_include_tag 'jrails' %>
+	<%= yield :head %>
+</head>
+<body>
+	<div id="container">
+		<noscript>
+			<div id="warning-no-javascript">
+				Seu navegador não suporta javascript ou o javascript está desabilitado. Para uma melhor experiência, habilite o javascript do seu navegador.
+			</div>
+		</noscript>
+		<div id="header">
+			<h1><a href="/">Eleição 2010 UFF</a></h1>
+			<div id="user-navigation">
+				<ul class="wat-cf">
+				<% if logged_in? -%>
+					<li><a href="/logout" class="logout">Logout</a></li>
+				<% else %>
+					<li><a href="/login" class="login" style="font-size: 15px">Login</a></li>
+				<% end %>
+				</ul>
+			</div>
+			<div id="main-navigation">
+				<ul class="wat-cf">
+					<li class="first <%= class_to_if_current "active", home_path%>"><%= link_to "Home", home_path %></li>
+					<% if logged_in? -%>
+					<li class="<%= class_to_if_current "active", chapas_path%>"><%= link_to "Chapas", chapas_path %></li>
+					<li class="<%= class_to_if_current "active", locals_path%>"><%= link_to "Locais", locals_path %></li>
+					<li class="<%= class_to_if_current "active", registro_de_votos_path%>"><%= link_to "Registros de votos", registro_de_votos_path %></li>
+					<% end %>
+					<li class="<%= class_to_if_current "active", "/graficos_chapas"%>"><%= link_to "Gráficos das chapas", "/graficos_chapas" %></li>
+					<li class="<%= class_to_if_current "active", "/graficos_locais"%>"><%= link_to "Gráficos de locais", "/graficos_locais" %></li>
+					<li class="<%= class_to_if_current "active", "/graficos_por_categoria"%>"><%= link_to "Gráficos de categorias", "/graficos_por_categoria" %></li>
+				</ul>
+			</div>
+		</div>
+		<div id="wrapper" class="wat-cf">
+			<div class="flash">
+
+				<% flash.each do |type, message| -%>
+				<div class="flash <%= type %>">
+					<p><%= message %></p>
+				</div>
+				<% end -%>
+			</div>
+
+			<div id="main">
+				<%= yield :corpo %>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="block">
+				<p>Copyright &copy; <%= Time.now.year %> Academico Graduação on Rails.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

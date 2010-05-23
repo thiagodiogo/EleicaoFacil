@@ -1,0 +1,212 @@
+/* Override here any style definide by web-app-theme */
+#main {
+    width: 95%;
+}
+
+th.center, td.center {
+    text-align: center;
+}
+
+.destaque-legenda {
+    font-weight: bold;
+    font-size: 12px;
+    vertical-align:middle;
+}
+
+.bold {
+    font-weight: bold
+}
+
+/** #################### BOTOES #################### */
+#botoes-exportacao {
+    padding-left: 5px;
+    border-left: 1px solid blue;
+    font-size: 12px;
+}
+
+#titulo-botoes-exportacao {
+    font-weight: bold;
+    color: blue
+}
+
+/** #################### Legenda #################### */
+#dados-tabela {
+    margin-top: 10px;
+}
+
+.legenda {
+    background-color: #ffffbb;
+    font-size: 11px;
+}
+
+.legenda h4 {
+    padding: 3px 3px;
+    margin: 0;
+    background: #ffffbb;
+    color: #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/** #################### Barra de navegacao #################### */
+.inner {
+    min-height: 100px
+}
+
+.barra-navegacao {
+    font-style:italic;
+}
+
+/** #################### Detalhamento de aluno #################### */
+
+#detalhamento-aluno {
+    font-size: 13px
+}
+
+/** #################### Detalhamento de turma #################### */
+#dados-turma {
+}
+
+#detalhamento-turma {
+    font-size: 13px
+}
+
+.detalhe-vagas-turma {
+}
+
+.detalhe-nome-curso {
+}
+
+.detalhe-vagas {
+    color: blue
+}
+
+.detalhe-horarios-turma {
+    width: 200px;
+    float: left;
+}
+
+.detalhe-vagas-turma ul {
+    list-style-type: none
+}
+
+.detalhe-horarios-turma ul {
+    list-style-type: none
+}
+
+
+
+/** #################### Tabela Relatorios #################### */
+.tabela-relatorios .bloco {
+    margin: 20px;
+	display: block;
+
+	padding: 5px;
+    border: 1px solid #666;
+    -webkit-box-shadow: 5px 5px 0px  #666;
+    -moz-box-shadow: 5px 5px 0px #666;
+    box-shadow: 5px 5px 0px #666;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.tabela-relatorios h5 {
+    color: #007ba7;
+    margin-bottom: 5px
+}
+
+.tabela-relatorios .item-tabela-relatorios {
+    margin-bottom: 20px;
+}
+
+
+
+
+/** #################### BOXXXXXXX #################### */
+#caixa {
+    margin-bottom: 10px;
+    background: #F7F7F8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/*
+#caixa h4 {
+    padding: 3px 3px;
+    margin: 0;
+    background: #ddd;
+    color: #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+*/
+
+#caixa .content {
+}
+
+.block .content {
+    -webkit-box-shadow: 5px 5px 30px  #666;
+    -moz-box-shadow: 5px 5px 30px #666;
+    box-shadow: 5px 5px 30px #666;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.legenda {
+    -webkit-box-shadow: 0px 0px 0px  #666!important;
+    -moz-box-shadow: 0px 0px 0px #666!important;
+    box-shadow: 0px 0px 0px #666!important;
+}
+
+.even{
+    background-color:#ccc;
+}
+
+#warning-no-javascript {
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid #e0d300;
+    background-color: #ffffcc;
+}
+
+/** #################### ERROS #################### */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+

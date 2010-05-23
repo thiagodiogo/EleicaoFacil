@@ -1,0 +1,29 @@
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Cadastro de locais</h2>
+			<%= link_to 'Novo local', new_local_path %>
+			<br/><br/><br/>
+			<table class="table">
+				<tr>
+					<th>Nome</th>
+					<th>Seção</th>
+					<th>Mesa</th>
+				</tr>
+
+				<% @locals.each do |local| %>
+				<tr>
+					<td><%=h local.nome %></td>
+					<td><%=h local.secao %></td>
+					<td><%=h local.mesa %></td>
+					<td><%= link_to 'Visualizar', local %></td>
+					<td><%= link_to 'Editar', edit_local_path(local) %></td>
+					<td><%= link_to 'Remover', local, :confirm => 'Are you sure?', :method => :delete %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
+<%end%>

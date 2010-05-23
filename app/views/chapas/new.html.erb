@@ -1,0 +1,23 @@
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Nova chapa</h2>
+
+			<% form_for(@chapa) do |f| %>
+			<%= f.error_messages %>
+
+			<p>
+				<%= f.label :nome %><br />
+				<%= f.text_field :nome %>
+			</p>
+			<p>
+				<%= f.submit 'Create' %>
+			</p>
+			<% end %>
+
+			<%= link_to 'Back', chapas_path %>
+		</div>
+	</div>
+</div>
+<%end%>

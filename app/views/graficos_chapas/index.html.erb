@@ -1,0 +1,20 @@
+<%- content_for(:head) do -%>
+<%= javascript_include_tag 'swfobject' %>
+<%- end -%>
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Estatísticas por Chapa</h2>
+			<div class="tabela-relatorios">
+				<% @graficos_chapas.reverse_each do |nome_chapa, grafico|%>
+				<div style="float:left; width: 400px">
+					<%= grafico %>
+				</div>
+				<%end%>
+				<br clear="all"/>
+			</div>
+		</div>
+	</div>
+</div>
+<%end%>

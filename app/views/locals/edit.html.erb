@@ -1,0 +1,32 @@
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Editando local</h2>
+
+			<% form_for(@local) do |f| %>
+			<%= f.error_messages %>
+
+			<p>
+				<%= f.label :nome %><br />
+				<%= f.text_field :nome %>
+			</p>
+			<p>
+				<%= f.label :secao %><br />
+				<%= f.text_field :secao %>
+			</p>
+			<p>
+				<%= f.label :mesa %><br />
+				<%= f.text_field :mesa %>
+			</p>
+			<p>
+				<%= f.submit 'Update' %>
+			</p>
+			<% end %>
+
+			<%= link_to 'Show', @local %> |
+			<%= link_to 'Back', locals_path %>
+		</div>
+	</div>
+</div>
+<%end%>

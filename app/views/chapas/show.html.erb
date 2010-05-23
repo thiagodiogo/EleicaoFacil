@@ -1,0 +1,15 @@
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Visualizando chapa</h2>
+			<p>
+				<b>Nome:</b>
+				<%=h @chapa.nome %>
+			</p>
+			<%= link_to 'Edit', edit_chapa_path(@chapa) %> |
+			<%= link_to 'Back', chapas_path %>
+		</div>
+	</div>
+</div>
+<%end%>

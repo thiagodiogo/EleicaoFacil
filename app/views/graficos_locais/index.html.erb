@@ -1,0 +1,21 @@
+<%- content_for(:head) do -%>
+<%= javascript_include_tag 'swfobject' %>
+<%- end -%>
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Estatísticas por Local (Somente votos Válidos)</h2>
+			<div class="tabela-relatorios">
+				<% @graficos_locais.reverse_each do |nome_completo, grafico|%>
+				<div class="bloco">
+					<h3><%=nome_completo%></h3>
+					<%= grafico %>
+				</div>
+				<%end%>
+				<br clear="all"/>
+			</div>
+		</div>
+	</div>
+</div>
+<%end%>

@@ -1,0 +1,51 @@
+<%- content_for(:head) do -%>
+	<%= javascript_include_tag 'swfobject' %>
+	<%- end -%>
+	<% content_for(:corpo) do %>
+	<div class="block">
+		<div class="content">
+			<div class="inner">
+				<h2>Estatísticas Gerais</h2>
+				<div class="tabela-relatorios">
+					<% @graficos_gerais.each do |nome_grafico, grafico|%>
+					<div class="bloco">
+						<h3><%=nome_grafico%></h3>
+						<div style="padding: 15px; border-top: 1px solid #000; width: 400px; float:left">
+							<h4>Total de técnicos: 3886</h4>
+							<h4>Total de docentes: 2781</h4>
+							<h4>Total de alunos: 29310</h4>
+						</div>
+						<div style="padding: 15px; border-top: 1px solid #000; margin-left: 30px">
+							<h4>Total de votos válidos até o momento: <%= @total_validos %></h4>
+							<h4>Total de brancos: <%= @total_brancos %></h4>
+							<h4>Total de nulos: <%= @total_nulos %></h4>
+							<h4>Total de abstenções: <%= @total_abstencoes %></h4>
+						</div>
+
+						<br clear="all"/>
+						<div style="padding: 15px; border-top: 1px solid #000; float:left">
+							<%= @grafico_urnas_apuradas %>
+						</div>
+						<div style="padding-top: 20px; border-top: 1px solid #000;">
+							<h4><b>Total de votos apurados até o momento: <%= @votos_apurados %> (<%= "%.2f" % ((@votos_apurados.to_f/@total_votos_possiveis) * 100)%>%)</b></h4>
+							<h4>Total de votos possíveis: <%= @total_votos_possiveis %></h4>
+						</div>
+						<div style="width: 400px; float: left;">
+							<h4><b>Total de urnas apuradas: <%= @total_urnas_apuradas %> (<%= "%.2f" % ((@total_urnas_apuradas.to_f/@total_urnas) * 100)%>%)</b></h4>
+							<h4>Total de urnas: <%= @total_urnas %></h4>
+						</div>
+						<br clear="all"/>
+						<hr/>
+						<div style="padding-top: 20px; border-top: 1px solid #000;">
+							<div style="width: 600px; margin-left: auto; margin-right: auto">
+								<%= grafico %>
+							</div>
+						</div>
+						<br clear="all"/>
+					</div>
+					<%end%>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<%end%>

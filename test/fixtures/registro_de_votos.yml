@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  idlocal: 1
+  secao: 1
+  idchapa: 1
+  votos_docentes: 1
+  votos_tecnicoadm: 1
+  votos_alunos: 1
+
+two:
+  idlocal: 1
+  secao: 1
+  idchapa: 1
+  votos_docentes: 1
+  votos_tecnicoadm: 1
+  votos_alunos: 1

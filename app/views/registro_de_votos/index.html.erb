@@ -1,0 +1,52 @@
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Cadastro dos Votos</h2>
+			<%= link_to 'Novo registro de votos', new_registro_de_voto_path %>
+			<br/><br/><br/>
+			<span style="font-size: 14px; margin-bottom: 15px; background-color: #ff0;">
+				<b>Legenda: V: Válidos, B: Brancos, N: Nulos, A: Abstinências</b>
+			</span>
+			<br/><br/>
+			<table class="table">
+				<tr>
+					<th>Local</th>
+					<th>Chapa</th>
+					<th>Docentes</th>
+					<th>Técnicos administrativos</th>
+					<th>Alunos</th>
+				</tr>
+
+				<% @registro_de_votos.each do |registro_de_voto| %>
+				<tr>
+					<td><%= "<b>#{registro_de_voto.local.nome}</b><br/>Seção:#{registro_de_voto.local.secao}<br/>Mesa:#{registro_de_voto.local.mesa}"%></td>
+					<td><%=h registro_de_voto.chapa.nome %></td>
+					<td>
+						<b>V:</b><%=h registro_de_voto.votos_docentes %><br/>
+						<b>B:</b><%=h registro_de_voto.votos_docentes_brancos %><br/>
+						<b>N:</b><%=h registro_de_voto.votos_docentes_nulos %><br/>
+						<b>A:</b><%=h registro_de_voto.votos_docentes_abstinencia %>
+					</td>
+					<td>
+						<b>V:</b><%=h registro_de_voto.votos_tecnicoadm %><br/>
+						<b>B:</b><%=h registro_de_voto.votos_tecnicoadm_brancos %><br/>
+						<b>N:</b><%=h registro_de_voto.votos_tecnicoadm_nulos %><br/>
+						<b>A:</b><%=h registro_de_voto.votos_tecnicoadm_abstinencia %>
+					</td>
+					<td>
+						<b>V:</b><%=h registro_de_voto.votos_alunos %><br/>
+						<b>B:</b><%=h registro_de_voto.votos_alunos_brancos %><br/>
+						<b>N:</b><%=h registro_de_voto.votos_alunos_nulos %><br/>
+						<b>A:</b><%=h registro_de_voto.votos_alunos_abstinencia %>
+					</td>
+					<td><%= link_to 'Visualizar', registro_de_voto %></td>
+					<td><%= link_to 'Editar', edit_registro_de_voto_path(registro_de_voto) %></td>
+					<td><%= link_to 'Remover', registro_de_voto, :confirm => 'Are you sure?', :method => :delete %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
+<% end %>

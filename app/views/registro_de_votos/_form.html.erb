@@ -1,0 +1,83 @@
+<p>
+	<%= formulario.label 'cbo_local', 'Local:' %>
+	<%= formulario.select(:local_id, options_for_select(Local.all.collect{|l| [["#{l.nome} - Seção:#{l.secao} - Mesa:#{l.mesa}"], [l.id]]})) %>
+</p>
+<p>
+	<%= formulario.label 'cbo_chapa', 'Chapa:' %>
+	<%= formulario.select(:chapa_id, options_for_select(Chapa.all.collect{|c| [[c.nome], [c.id]]}),{:include_blank => true} ) %>
+</p>
+<div id="div-novos-votos">
+	<div style="padding: 15px; border: 1px solid #ccc; margin: 15px; width: 200px; float: left">
+		<h3>Docentes</h3>
+		<p>
+			<%= formulario.label "Válidos" %><br />
+			<%= formulario.text_field :votos_docentes, :size=>"8" %>
+		</p>
+		<p>
+			<%= formulario.label "Brancos" %><br />
+			<%= formulario.text_field :votos_docentes_brancos, :size=>"8" %>
+		</p>
+		<p>
+			<%= formulario.label "Nulos" %><br />
+			<%= formulario.text_field :votos_docentes_nulos, :size=>"8" %>
+		</p>
+		<p>
+			<%= formulario.label "Abstenções" %><br />
+			<%= formulario.text_field :votos_docentes_abstinencia, :size=>"8" %>
+		</p>
+	</div>
+	<div style="padding: 15px; border: 1px solid #ccc; margin: 15px; width: 200px; float: left">
+		<h3>Técnicos ADM</h3>
+		<p>
+			<%= formulario.label "Válidos" %><br />
+			<%= formulario.text_field :votos_tecnicoadm, :size=>"8" %>
+		</p>
+		<p>
+			<%= formulario.label "Brancos" %><br />
+			<%= formulario.text_field :votos_tecnicoadm_brancos, :size=>"8" %>
+		</p>
+		<p>
+			<%= formulario.label "Nulos" %><br />
+			<%= formulario.text_field :votos_tecnicoadm_nulos, :size=>"8" %>
+		</p>
+		<p>
+			<%= formulario.label "Abstenções" %><br />
+			<%= formulario.text_field :votos_tecnicoadm_abstinencia, :size=>"8" %>
+		</p>
+	</div>
+	<div style="padding: 15px; border: 1px solid #ccc; margin: 15px; width: 200px; float: left">
+		<h3>Alunos</h3>
+		<p>
+			<%= formulario.label "Válidos" %><br />
+			<%= formulario.text_field :votos_alunos, :size=>"8" %>
+		</p>
+		<p>
+			<%= formulario.label "Brancos" %><br />
+			<%= formulario.text_field :votos_alunos_brancos, :size=>"8" %>
+		</p>
+		<p>
+			<%= formulario.label "Nulos" %><br />
+			<%= formulario.text_field :votos_alunos_nulos, :size=>"8" %>
+		</p>
+		<p>
+			<%= formulario.label "Abstenções" %><br />
+			<%= formulario.text_field :votos_alunos_abstinencia, :size=>"8" %>
+		</p>
+	</div>
+	<br clear="all"/>
+</div>
+<script>
+$(document).ready(function() {
+	$("#div-novos-votos").hide();
+
+	$('#registro_de_voto_chapa_id').change(function() {
+		// hide all
+		$("#div-novos-votos").hide();
+		// show current
+		//alert($(this).val());
+		if($(this).val() != "") {
+			$("#div-novos-votos").show();
+		}
+	});
+});
+</script>

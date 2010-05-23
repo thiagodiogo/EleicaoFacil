@@ -1,0 +1,21 @@
+<% content_for(:corpo) do %>
+<div class="block">
+	<div class="content">
+		<div class="inner">
+			<h2>Novo registro de votos</h2>
+
+			<% form_for(@registro_de_voto) do |f| %>
+			<%= f.error_messages %>
+
+			<%= render :partial => "form", :locals=>{:formulario=>f}%>
+
+			<p>
+				<%= f.submit 'Create' %>
+			</p>
+			<% end %>
+
+			<%= link_to 'Back', registro_de_votos_path %>
+		</div>
+	</div>
+</div>
+<%end%>

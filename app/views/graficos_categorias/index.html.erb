@@ -1,0 +1,49 @@
+<%- content_for(:head) do -%>
+	<%= javascript_include_tag 'swfobject' %>
+	<%- end -%>
+	<% content_for(:corpo) do %>
+	<div class="block">
+		<div class="content">
+			<div class="inner">
+				<h2>Estatísticas por Categoria</h2>
+				<div class="tabela-relatorios">
+					<div class="bloco">
+						<% @graficos_categorias.each do |categoria, grafico|%>
+						<% if categoria == "Alunos"%>
+						<div style="font-size: 14px; width: 240px; float: left">
+							<h3><%=categoria%></h3>
+							<b>Brancos:</b> <%= @total_brancos_alunos%> | 
+							<b>Nulos:</b> <%= @total_nulos_alunos%> | 
+							<b>Abstenções:</b> <%= @total_abstencoes_alunos%>
+							<%= grafico %>
+						</div>
+						<% else 
+						if categoria == "Docentes"%>
+						<div style="padding-left: 15px; font-size: 14px; width: 240px; float: left">
+							<h3><%=categoria%></h3>
+							<b>Brancos:</b> <%= @total_brancos_docentes%> | 
+							<b>Nulos:</b> <%= @total_nulos_docentes%> | 
+							<b>Abstenções:</b> <%= @total_abstencoes_docentes%>
+							<%= grafico %>
+						</div>
+						<% else
+						if categoria == "Técnicos ADM"%>
+						<div style="padding-left: 15px; font-size: 14px; width: 240px; float: left">
+							<h3><%=categoria%></h3>
+							<b>Brancos:</b> <%= @total_brancos_tecnicos%> | 
+							<b>Nulos:</b> <%= @total_nulos_tecnicos%> | 
+							<b>Abstenções:</b> <%= @total_abstencoes_tecnicos%>
+							<%= grafico %>
+						</div>
+						<% end
+					end
+				end %>
+				<%end%>
+				<br clear="all"/>
+			</div>
+
+		</div>
+	</div>
+</div>
+</div>
+<%end%>

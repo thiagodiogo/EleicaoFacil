@@ -1,0 +1,2 @@
+module GraficosCategoriasHelper
+end

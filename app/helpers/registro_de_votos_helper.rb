@@ -1,0 +1,2 @@
+module RegistroDeVotosHelper
+end
